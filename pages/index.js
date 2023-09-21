@@ -15,26 +15,13 @@ export async function getStaticProps() {
 
 export default function Home ( { allData, allData2 } ) {
     return (
-            <div className="container-fluid">
-                <h1 className="text-center m-5 ">The Captains</h1>
+            <main className="container-fluid">
+                <h1 className="text-center m-5 ">Meet Your Captains</h1>
 
-                <div className="list-group mt-4 text-center">
-                    {allData.map(
+                <div className="list-group mt-4 text-center w-50 m-auto">
+                    {allData && allData.map(
                         ({id, name}) => (
-                            <Link key={id} href={`/${id}`} className="list-group-item list-group-item-action">
-                                {name}
-                            </Link>
-                        )
-                    )
-                    }
-                </div>
-
-                <h1 className="text-center m-5">The Ships</h1>
-
-                <div className="list-group mt-4 text-center">
-                    {allData2.map(
-                        ({id, name}) => (
-                            <Link key={id} href={`/boats/${id}`} className="list-group-item list-group-item-action">
+                            <Link key={id} href={`/${id}`} className="list-group-item list-group-item-action text-center p-4">
                                 {name}
                             </Link>
                         )
@@ -44,7 +31,8 @@ export default function Home ( { allData, allData2 } ) {
 
 
 
-            </div>
+
+            </main>
     )
 
 }
