@@ -1,19 +1,16 @@
 
 import Link from 'next/link';
-import { getSortedList, getSortedList2 } from '../lib/data';
-
+import { getSortedList } from '../lib/data-firebase';
 export async function getStaticProps() {
-    const allData = getSortedList();
-    const allData2 = getSortedList2()
+    const allData = await getSortedList();
     return {
         props: {
-            allData,
-            allData2
+            allData
         }
     };
 }
 
-export default function Home ( { allData, allData2 } ) {
+export default function Home ( { allData } ) {
     return (
             <main className="container-fluid">
                 <h1 className="text-center m-5 ">Meet Your Captains</h1>
