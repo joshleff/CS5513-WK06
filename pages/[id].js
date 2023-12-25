@@ -1,4 +1,4 @@
-import { getAllIds, getData, getBoatData } from '../lib/data-firebase';
+import { getAllIds, getData } from '../lib/data-firebase';
 export async function getStaticProps( { params } ) {
     const personData = await getData(params.id);
 
